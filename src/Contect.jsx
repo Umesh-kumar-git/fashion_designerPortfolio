@@ -14,7 +14,6 @@ const Contect = () => {
       emailjs.sendForm('service_k7pimir', 'template_b49ub1j', form.current, 'ePp1eXk2OF8Fpk4nR')
         .then((result) => {
           toast.success("Email send")
-            console.log(result.text);
         }, (error) => {
     
           toast.error(" Sending fail")
@@ -27,11 +26,11 @@ const Contect = () => {
     <>
     <ToastContainer />
      <div className="div flex justify-center bg-beige w-full h-screen  ">
-      <form ref={form} onSubmit={sendEmail} className=' flex flex-col  w-1/2 space-y-8 mt-28' >
-        <input type="text" name='user_name'  placeholder='Name...' className=' placeholder:italic focus:outline-none w-96' />
-        <input type="text" name='user_email' placeholder='Email' className='placeholder:italic focus:outline-none w-96'  />
-        <textarea name="message" id="" cols="30" rows="10" placeholder='Messsage' className='placeholder:italic focus:outline-none '></textarea>
-        <input type="submit" value="send" className='bg-red p-4 ' />
+      <form ref={form} onSubmit={sendEmail} className=' flex flex-col   w-4/5 sm:w-1/2 space-y-8 mt-28'  >
+        <input type="text" name='user_name'  placeholder='Name...' className=' placeholder:italic focus:outline-none w-4/5 sm:w-1/2' required />
+        <input type="text" name='user_email' placeholder='Email' className='placeholder:italic focus:outline-none w-4/5 sm:w-1/2'  required />
+        <textarea name="message" id="" cols="30" rows="10" placeholder='Messsage' className='placeholder:italic focus:outline-none ' required></textarea>
+        <input type="submit" value="Send" className='bg-red p-4 bg-gray cursor-pointer ' />
       </form>
       <div className="location"></div>
      </div>

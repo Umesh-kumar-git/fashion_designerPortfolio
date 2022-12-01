@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./workcard/Card";
 
 const Ary =[
@@ -33,17 +33,16 @@ const Ary =[
 
 const Work = () => {
 
-  const [collection, setcollection] = useState(Ary)
-
+  
   return (
     <>
-      <div className="collection h-min-full bg-red ">
-        <div className="h-60 bg-red flex items-center justify-center  ">
+      <div className="collection h-min-full bg-gray ">
+        <div className="h-20 sm:h-60 bg-skin flex items-center justify-center  ">
           <p className="text-4xl text-center  ">P/V Collection</p>
         </div>
 
         {
-          collection.map((items ,i)=>{
+          Ary.map((items ,i)=>{
             return(  
             <Card item ={items} key={i} />
 

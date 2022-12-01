@@ -5,17 +5,17 @@ import{HiOutlineMail} from "react-icons/hi"
 const Home = () => {
   return (
     <>
-    <div className="cover">
-    <div className="wapper w-full bg-beige flex justify-start items-center ">
-     <div className="div flex flex-col space-y-5 ml-3">
-      <a href="#"><BsInstagram className=' w-8 h-8'/></a>
-      <a href="#"><HiOutlineMail className='w-9 h-9'/></a>
+    <div className="cover   ">
+    <div className="wapper w-full h-96 sm:h-screen  bg-beige flex justify-center items-center ">
+     <div className="div sm:flex flex-col space-y-5 mr-8 hidden ">
+      <a href="https://www.instagram.com/vicky_codehub/"><BsInstagram className=' md:w-8 md:h-8'/></a>
+      <a href="#"><HiOutlineMail className='md:w-9 md:h-9'/></a>
      </div>
-    <div className=" bg-fixed h-screen w-4/5 bg-contain bg-no-repeat bg-center" style={{"backgroundImage":`url("https://i.ibb.co/z5grjVb/bg.jpg")`}}>
+    <div className=" sm:bg-fixed w-full sm:w-4/5 h-full   bg-contain  bg-no-repeat bg-center" style={{"backgroundImage":`url("https://i.ibb.co/z5grjVb/bg.jpg")`}}>
     </div>
     </div>
-    <div className="  h-96 bg-beige flex items-center ">
-       <h1 className='text-8xl italic text-center '> I'm prerna. Stylist
+    <div className=" h-30 sm:h-80 bg-beige flex justify-center items-center ">
+       <h1 className=' text-3xl  sm:text-6xl italic text-center '> I'm prerna. Stylist
        & Fashion Designer </h1>
  </div>
  <Work/>
