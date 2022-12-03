@@ -1,7 +1,10 @@
 import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
-import {FaInstalod} from "react-icons/fa"
-
+import {FaInstalod} from "react-icons/fa";
+import { useState} from "react";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {GrClose} from "react-icons/gr";
+import { useRef } from "react";
 
 const navlist = [
 
@@ -27,32 +30,37 @@ const navlist = [
       },
 ]
   
-  console.log(navlist);
+  // console.log(navlist);
 
 
 const Navbar = () => {
 
- 
+  const [clicked, setclicked] = useState(false)
+  // const hide = useRef()
+  const  handler = ()=>{
+    setclicked(!clicked)
+  }
 
   return (
     <>
-      <nav className="  flex h-28  w-full justify-evenly items-center  bg-beige  ">
+      <nav className="  sm:flex sm:h-24 h-20 w-full sm:justify-evenly sm:items-center bg-green  ">
         <motion.div 
         initial={{x:"-100%"}}
         whileInView={{x:"0%"}}
-        className="logo cursor-pointer w-1/2 sm:w-52 ">
-          <FaInstalod className=" w-8 h-8" />PreRnA
+        className="logo cursor-pointer w-1/2   h-full ">
+          <FaInstalod className=" w-8 h-8  " />PreRnA
         </motion.div>
 
 
-          {/* <GiHamburgerMenu onClick={open}  className="w-8 h-8 sm:hidden "/> */}
+       <div onClick={handler} className=" absolute top-5 text-3xl  right-4 sm:hidden">
+      <i className= {clicked ? "fas fa-times" : "fa fa-bars"} > </i>
+         </div> 
 
-        <ul  className=" bg-beige  cursor-pointer  sm:text-lg  space-x-8  ">
-          {/* <GrClose onClick={close} className ="w-8 h-8"/> */}
+        <ul className= { clicked ? "sm:text-lg  z-50 absolute sm:static bg-green    w-full  min-h-min" : " absolute sm:static -top-full" }   >
 
          { navlist.map((item,i)=>{
           return(  
-            <Link to={`${item.path}`}  className="">{`${item.name}`}</Link>
+            <Link to={`${item.path}`} className=" block sm:inline-block p-3  text-center hover:bg-gray" key={i}>  {`${item.name}`}</Link>
           )
          })}
           

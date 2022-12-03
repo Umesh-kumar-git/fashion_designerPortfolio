@@ -4,10 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+
     colors:{
+
       "beige":"#ffeddd",
       "gray":"#cfd0d2",
-      "skin":"#f9b9a0"
+      "skin":"#f9b9a0",
+      "green":"#97af89"
     },
    
     extend: {},
